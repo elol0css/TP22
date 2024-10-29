@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Travail pratique 2</title>
+    <meta name="author" content="Élody Nadeau">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/pizza.css">
+    <link rel="stylesheet" href="css/commande.css">
+</head>
+
+<body>
+    <!-- Bloc d'en-tête contenant aussi le bloc de navigation-->
+    <header>
+        <h1><img src="img/chef-7005172_640.png" alt="pizza cook"> Wario Pizza</h1>
+        <nav>
+            <a href="#">À propos</a>
+            <a href="#">Succursales</a>
+            <a href="#">Menu</a>
+            <a href="#">Commander</a>
+        </nav>
+    </header>
+
+    <!-- Bloc principal -->
+    <main>
+        <form id="choix_pizza"> <!--NE PAS CHANGER-->
+
+            <div id="pizza">
+                <img src="img/pate.png" alt="pate à pizza" id="patePizza">
+            </div>
+
+
+            <!--CRÉATION DE LA PIZZA-->
+            <div id="optionsPizza"> 
+
+               <h1>Faire vos choix pour construire votre pizza</h1>
+
+                <!--GARNITURES-->
+                <div id="garnitures">
+
+                <input type="checkbox" name="sauceTomate" id="optionSauceTomate" onchange="ajouterSauceTomate()">
+                <label for="optionSauceTomate">Sauce aux tomates</label>
+
+                <br>
+
+                <input type="checkbox" name="pepperoni" id="optionPepperoni" onchange="ajouterPepperoni()">
+                <label for="optionPepperoni">Pepperoni</label>
+
+                <br>
+
+                <input type="checkbox" name="champignons" id="optionChampignons" onchange="ajouterChampignons()">
+                <label for="optionChampignons">Champignons</label>
+
+                <br>
+
+                <input type="checkbox" name="tomate" id="optionTomate" onchange="ajouterTomate()">
+                <label for="optionTomate">Tomates</label>
+
+                <br>
+
+                <input type="checkbox" name="piments" id="optionPiments" onchange="ajouterPiments()">
+                <label for="optionPiments">Piments</label>
+                    
+                </div>
+                 
+                <!--FROMAGES-->
+                <div id="fromages">
+
+                <label for="optionsFromages">Choix de fromages</label>
+
+                    <select name="fromages" id="optionsFromages"> 
+                        <option value="aucun" onchange="ajouterAucunFromage()">Aucun</option>
+                        <option value="mozzarella" onchange="ajouterMozzarella()">Mozzarella</option>
+                        <option value="cheddar" onchange="ajouterCheddar()">Cheddar</option>
+                        <option value="oka" onchange="ajouterOka()">Oka</option>
+                    </select>
+        
+                </div>
+
+                <!--SIZE-->
+                <div id="size">
+                <input type="radio" id="option8Pouces" name="pouces" value="8">
+                <label for="option8Pouces">8 pouces</label>
+
+                <input type="radio" id="option12Pouces" name="pouces" value="12">
+                <label for="option12Pouces">12 pouces</label>
+
+                <input type="radio" id="options20Pouces" name="pouces" value="20">
+                <label for="options20Pouces">20 pouces</label>
+
+                </div>
+
+                <!--RESET-->
+                <div id="reset">
+
+                <button type="reset" onclick="" >Recommencer</button>
+
+                </div>
+
+            </div>
+
+            <img id="decor" src="img/icon-1447860_1920.png" alt="image de pizza et ingrédients">
+        </form>
+
+
+
+
+        <p>Veuillez remplir le formulaire suivant pour effectuer votre commande.</p>
+        
+        <form id="info_commande"> <!--NE PAS CHANGER-->
+
+            <p> Informations du clients </p>
+
+            <div id="informations">
+
+            <label for="prenom">Prénom:</label>
+            <input type="text" id="prenom" name="ecrirePrenom">
+
+            <label for="nom">Nom de famille:</label>
+            <input type="text" id="nom" name="ecrireNom">
+
+            <label for="adresse">Adresse:</label>
+            <input type="text" id="adresse" name="ecrireAdresse" placeholder="# civique et rue">
+
+            <label for="telephone">Télephone:</label>
+            <input type="text" id="telephone" name="ecrireTelephone" placeholder="123-456-7890">
+
+            <label for="courriel">Courriel:</label>
+            <input type="email" id="courriel" name="ecrireCorriel" placeholder="nom@domaine.com">
+
+            </div>
+
+            <div id="courrielConfirmation">
+
+            <input type="checkbox" id="recevoirCourriel" name="confirmationCourriel">
+            <label for="recevoirCourriel">J'accepte de recevoir des messages de promotions et les nouveautés par courriel.</label>
+
+            </div>
+             
+            <hr>
+
+            <p>Ramassage:</p>
+
+            <div id="date">
+
+            <label for="dateRamassage">Date de ramassage:</label>
+            <input type="date" id="dateRamassage">
+
+            </div>
+
+            <div id="heure">
+
+            <label for="heureRamassage">Heure:</label>
+            <input type="time" id="heureRamassage">
+
+            </div>
+            
+
+            <div id="paiment">
+
+             <span class="fa-brands fa-cc-visa"></span>
+             <span class="fa-brands fa-cc-mastercard"></span>
+             <span class="fa-brands fa-cc-paypal"></span>
+
+            </div>
+
+             <div id="bouton">
+
+             <input type="reset" value="Recommencer">
+             <input type="button" id="soumettre" value="Soumettre la commande" onclick="validation()">
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <p><span class="fa-solid fa-car-side"></span> Merci de nous faire confiance</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script/commande.js" async></script>
+    <script src="script/pizzaBuilder.js" async></script>
+    <!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/d6973d5988.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

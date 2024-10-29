@@ -1,0 +1,46 @@
+#pizza {
+    position: relative;
+}
+
+.ingredient_affiche {
+    position: absolute;
+    left: 0;
+}
+
+#pizza,
+#optionsPizza {
+    display: inline-block;
+    width: fit-content;
+    border: 0.1rem solid orange;
+    min-height: 26rem;
+    vertical-align: top;
+}
+
+#optionsPizza {
+    padding: 0 2rem 2rem 2rem;
+    width: 45%;
+}
+
+#decor {
+    width: 16%;
+}
+
+/*Ajouter votre CSS à la suite*/
+
+#optionsPizza input[type="checkbox"]{
+    width: 1.3rem;
+    height: 1.3rem;
+}
+
+#optionsPizza input[type="radio"]{
+    width: 1.3rem;
+    height: 1.3rem;
+    background: rgb(255, 174, 0); /*marche pas*/
+}
+
+#optionsPizza select{
+width: 35%;
+height: 1.5rem;
+background-color: rgb(255, 174, 0, 0.3);
+}
+
